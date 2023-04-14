@@ -28,7 +28,7 @@ always @(posedge countif.clk) begin
 	
 end
 
-assign WINNER = (count == 15) ? 1 : 0;
+assign WINNER = (count == COUNT_MAX_VALUE) ? 1 : 0;
 assign LOSER  = (count == 0) ? 1 : 0; 
 
 always @(WINNER , LOSER , countif.clear) begin
