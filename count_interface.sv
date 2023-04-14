@@ -1,7 +1,7 @@
-interface count_if(input bit clk);
+interface count_if #(parameter COUNT_MAX_VALUE ='d15) (input bit clk);
     bit clear ,rst, INIT,GAMEOVER ;
 	logic [1:0] control;
-	logic [3:0] initial_value;
+	logic [$clog2(COUNT_MAX_VALUE)-1:0] initial_value;
 	logic [1:0] WHO;
 
     modport design (

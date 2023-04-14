@@ -1,6 +1,7 @@
-module count_up_dwn(count_if countif);
-					
-logic [3:0] count,cnt_loser , cnt_winner;
+module count_up_dwn #(parameter COUNT_MAX_VALUE ='d15) (count_if countif);
+
+logic [$clog2(COUNT_MAX_VALUE)-1:0] count;		
+logic [3:0] cnt_loser , cnt_winner;
 logic WINNER,LOSER;
 
 always @(posedge countif.rst) begin
